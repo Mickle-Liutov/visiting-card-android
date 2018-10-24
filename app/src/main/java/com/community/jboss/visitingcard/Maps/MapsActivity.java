@@ -1,17 +1,13 @@
 package com.community.jboss.visitingcard.Maps;
 
-import android.content.Intent;
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.community.jboss.visitingcard.R;
-import com.community.jboss.visitingcard.VisitingCard.ViewVisitingCard;
-import com.community.jboss.visitingcard.VisitingCard.VisitingCardActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,6 +18,18 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private String[][] dataset = new String[][]{
+            new String[]{"Michael","michael@gmail.com"},
+            new String[]{"John","john@gmail.com"},
+            new String[]{"Alex","alex@gmail.com"},
+            new String[]{"Ann","ann@gmail.com"},
+            new String[]{"James","james@gmail.com"},
+            new String[]{"Paul","paul@gmail.com"},
+            new String[]{"Steve","steve@gmail.com"},
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +43,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // TODO: List item click should result in launching of ViewVisitingCard Acitivity with the info of the tapped Visiting card.
 
-        TextView list_item = findViewById(R.id.list_item);
-        list_item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent toVisitingCardView = new Intent(MapsActivity.this, ViewVisitingCard.class);
-                startActivity(toVisitingCardView);
-            }
-        });
+        mRecyclerView = findViewById(R.id.list_item);
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new ListOfCardsRecyclerAdapter(dataset);
+        mRecyclerView.setAdapter(mAdapter);
 
         //TODO: Create Custom pins for the selected location
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:text="(10)"></TextView>
+            android:text="(10)"/>
     </LinearLayout>
 
 
@@ -46,16 +46,11 @@
       TODO: Replace the below TextView with a ListView containing VisitingCards in that GeoFenced Location.
     -->
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginTop="10dp"
-        android:background="#000"
-        android:padding="8dp"
-        android:text="Add List View here"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="20sp" />
+        android:padding="8dp" />
 
 </LinearLayout>
