@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#e60000</color>
-    <color name="colorPrimaryDark">#b30000</color>
-    <color name="colorAccent"> #ffd633</color>
+    <color name="JBossPrimary">#616161</color>
+    <color name="JBossPrimaryDark">#373737</color>
+    <color name="JBossAccent"> #d50000</color>
 </resources>
