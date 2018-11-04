@@ -8,22 +8,89 @@
     tools:context=".LoginActivity"
     tools:showIn="@layout/login_main">
 
-    <!--
-      TODO: Replace the below TextView by Firebase SignIn UI using Email or Google Signin.
-    -->
+    <!--TODO: Set app logo to ImageView-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:text="Firebase Authentication"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.345" />
+        app:layout_constraintBottom_toTopOf="@id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="40dp"
+        android:src="@mipmap/ic_launcher"/>
 
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        android:layout_marginBottom="5dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintBottom_toTopOf="@id/signup_button"
+        android:hint="Password"
+        android:layout_marginBottom="5dp"
+        />
+
+    <Button
+        android:id="@+id/signup_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Sign up"
+        app:layout_constraintBottom_toTopOf="@id/signin_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        android:background="@drawable/border"
+        android:layout_marginBottom="5dp"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/signin_container"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signup_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/border"
+        >
+
+        <Button
+            android:id="@+id/signin_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:text="Sign in"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/google_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/common_google_signin_btn_icon_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/border"/>
+
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -9,6 +9,14 @@
     <!--
       TODO: Add profileImage - ImageView ; {Name, Email, PhoneNumber, Github, LinkedIn & Twitter Fields} - EditText
     -->
+    <Button
+        android:id="@+id/log_out"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Log out"/>
 
     <TextView
         android:id="@+id/textView"
