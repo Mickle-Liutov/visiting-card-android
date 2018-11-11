@@ -3,4 +3,5 @@
     <color name="colorPrimary">#e60000</color>
     <color name="colorPrimaryDark">#b30000</color>
     <color name="colorAccent"> #ffd633</color>
+    <color name="visiting_card">#b30000</color>
 </resources>
