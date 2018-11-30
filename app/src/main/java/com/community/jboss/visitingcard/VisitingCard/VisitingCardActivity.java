@@ -1,16 +1,16 @@
 package com.community.jboss.visitingcard.VisitingCard;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.community.jboss.visitingcard.LoginActivity;
+import com.community.jboss.visitingcard.AboutActivity;
 import com.community.jboss.visitingcard.Maps.MapsActivity;
 import com.community.jboss.visitingcard.R;
 import com.community.jboss.visitingcard.SettingsActivity;
@@ -58,8 +58,12 @@ public class VisitingCardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
-                Intent intent = new Intent(VisitingCardActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                Intent settings_intent = new Intent(VisitingCardActivity.this, SettingsActivity.class);
+                startActivity(settings_intent);
+                return true;
+            case R.id.about:
+                Intent about_intent = new Intent(VisitingCardActivity.this,AboutActivity.class);
+                startActivity(about_intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
