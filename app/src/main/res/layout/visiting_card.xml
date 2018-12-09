@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.c1om/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".visitingcard.VisitingCardActivity">
-    tools:context=".VisitingCard.VisitingCardActivity"
+    tools:context=".visitingcard.VisitingCardActivity"
     android:gravity="center"
     android:orientation="vertical"
     android:weightSum="100">
@@ -27,6 +26,50 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/edit_card"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_edit"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:elevation="1dp"/>
+
+            <TextView
+                android:id="@+id/button_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="center"
+                android:text="Save"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="1dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textAlignment="center"
+                android:text="Cancel"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="70dp"
+                android:elevation="1dp"
+                android:visibility="gone"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -47,7 +90,9 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:src="@drawable/man"/>
-                    <TextView
+
+                    <EditText
+                        android:id="@+id/name_edittext"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -55,7 +100,22 @@
                         android:fontFamily="sans-serif-smallcaps"
                         android:textAlignment="center"
                         android:text="Name Here"
-                        android:layout_marginTop="10dp"/>
+                        android:hint="Your name"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="@color/visitingCardEditingHint"
+                        android:inputType="text"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="#fff"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textAlignment="center"
+                        android:text="Name Here"
+                        android:layout_marginTop="10dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,7 +136,23 @@
                             android:layout_height="30dp"
                             android:src="@drawable/call"
                             android:padding="5dp"/>
+
+                        <EditText
+                            android:id="@+id/number_edittext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="15sp"
+                            android:textColor="#000"
+                            android:fontFamily="sans-serif-smallcaps"
+                            android:textAlignment="center"
+                            android:text="xxx-xxxx-xxx"
+                            android:hint="Your phone number"
+                            android:layout_marginLeft="10dp"
+                            android:inputType="number"
+                            android:visibility="gone"/>
                         <TextView
+                            android:id="@+id/number_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
@@ -86,6 +162,7 @@
                             android:textAlignment="center"
                             android:text="xxx-xxxx-xxx"
                             android:layout_marginLeft="10dp"/>
+
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -97,7 +174,24 @@
                             android:layout_height="30dp"
                             android:padding="5dp"
                             android:src="@drawable/mail"/>
+
+                        <EditText
+                            android:id="@+id/email_edittext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="15sp"
+                            android:textColor="#000"
+                            android:fontFamily="sans-serif-smallcaps"
+                            android:textAlignment="center"
+                            android:text="email@domain.com"
+                            android:hint="Your email"
+                            android:layout_marginLeft="10dp"
+                            android:inputType="textEmailAddress"
+                            android:visibility="gone"/>
+
                         <TextView
+                            android:id="@+id/email_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
@@ -130,7 +224,24 @@
                         android:layout_height="30dp"
                         android:src="@drawable/linkedin"
                         android:padding="5dp"/>
+
+                    <EditText
+                        android:id="@+id/linkedin_edittext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#fff"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textAlignment="center"
+                        android:text="www.linkedin.com/xxxxx"
+                        android:hint="Your LinkedIn link"
+                        android:layout_marginLeft="10dp"
+                        android:textColorHint="@color/visitingCardEditingHint"
+                        android:visibility="gone"/>
+
                     <TextView
+                        android:id="@+id/linkedin_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -151,7 +262,24 @@
                         android:layout_height="30dp"
                         android:padding="5dp"
                         android:src="@drawable/twitter"/>
+
+                    <EditText
+                        android:id="@+id/twitter_edittext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#fff"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textAlignment="center"
+                        android:text="www.twitter.com/xxxxx"
+                        android:hint="Your Twitter link"
+                        android:layout_marginLeft="10dp"
+                        android:textColorHint="@color/visitingCardEditingHint"
+                        android:visibility="gone"/>
+
                     <TextView
+                        android:id="@+id/twitter_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -173,7 +301,24 @@
                         android:layout_height="30dp"
                         android:padding="5dp"
                         android:src="@drawable/git"/>
+
+                    <EditText
+                        android:id="@+id/github_edittext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="15sp"
+                        android:textColor="#fff"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:textAlignment="center"
+                        android:text="www.github.com/xxxxx"
+                        android:hint="Your GitHub link"
+                        android:textColorHint="@color/visitingCardEditingHint"
+                        android:layout_marginLeft="10dp"
+                        android:visibility="gone"/>
+
                     <TextView
+                        android:id="@+id/github_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -210,5 +355,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:rippleColor="@color/colorAccent" />
+
 
 </LinearLayout>
